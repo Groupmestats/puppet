@@ -1,0 +1,3 @@
+GROUPSTATS_FILE=/app/groupmestats/camping/GroupStats.rb
+GROUPSTATS_CONFIG=/app/groupmestats/camping/web.yaml
+USER=root
