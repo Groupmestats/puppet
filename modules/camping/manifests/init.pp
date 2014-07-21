@@ -1,17 +1,17 @@
 class camping {
 
     file {'/etc/default/camping-server':
-	source => '/vagrant/modules/camping/files/camping-server.default',
+	source => '/vagrant/puppet/modules/camping/files/camping-server.default',
 	mode => 755,
     }
 
     file {'/etc/init.d/camping-server':
-        source => '/vagrant/modules/camping/files/camping-server.init',
+        source => '/vagrant/puppet/modules/camping/files/camping-server.init',
         mode => 755,
     }
 
     file {'/app/groupmestats/camping/web.yaml':
-	source => '/vagrant/modules/camping/files/web.yaml',
+	source => '/vagrant/puppet/modules/camping/files/web.yaml',
 	mode => 744,
     }
 

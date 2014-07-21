@@ -8,17 +8,17 @@ class apache {
     }
 
     file { '/etc/apache2/sites-enabled/000-default':
-        source => '/vagrant/modules/apache/files/000-default',
+        source => '/vagrant/puppet/modules/apache/files/000-default',
 	require => Package['apache2'],
     }
 
     file { '/etc/ssl/apache2/server.crt':
-        source => '/vagrant/modules/apache/files/server.crt',
+        source => '/vagrant/puppet/modules/apache/files/server.crt',
         require => File['/etc/ssl/apache2/'],
     }
 
     file { '/etc/ssl/apache2/server.key':
-        source => '/vagrant/modules/apache/files/server.key',
+        source => '/vagrant/puppet/modules/apache/files/server.key',
         require => File['/etc/ssl/apache2/'],
     }
 
