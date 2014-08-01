@@ -1,4 +1,4 @@
-N INIT INFO
+# INIT INFO
 # Provides:          Groupstats
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
