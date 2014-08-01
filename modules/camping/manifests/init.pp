@@ -1,5 +1,7 @@
 class camping {
 
+    import logrotate
+
     file {'/etc/default/camping-server':
 	source => '/vagrant/puppet/modules/camping/files/camping-server.default',
 	mode => 755,
@@ -16,11 +18,24 @@ class camping {
 	ensure => 'directory',
     }
 
-    file {'/var/log/camping-server/log':
+    file {'/var/log/camping-server/webserver.log':
 	ensure => 'file',
 	mode => 666,
 	require => File['/var/log/camping-server'],
 	notify => Service['camping-server']
+    }
+
+    file {'/var/log/camping-server/groupmestats.log':
+        ensure => 'file',
+        mode => 666,
+        require => File['/var/log/camping-server'],
+        notify => Service['camping-server']
+    }
+
+    logrotate::rule { 'Groupmestats':
+	path         => '/var/log/camping-server/*.log',
+	rotate       => 30,
+  	rotate_every => 'day',
     }
 
     file {'/app/groupmestats/camping/web.yaml':
