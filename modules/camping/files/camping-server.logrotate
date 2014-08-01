@@ -1,0 +1,7 @@
+/var/log/camping-server/*.log {
+    daily
+    rotate 30
+    postrotate
+        /etc/init.d/camping-server restart > /dev/null
+    endscript
+}
