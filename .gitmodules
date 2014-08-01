@@ -1,0 +1,3 @@
+[submodule "modules/puppet-logrotate"]
+	path = modules/puppet-logrotate
+	url = git@github.com:Groupmestats/puppet-logrotate.git
